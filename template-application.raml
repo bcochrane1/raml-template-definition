@@ -1,0 +1,24 @@
+#%RAML 1.0
+title: Template Application
+description: Template application example description
+mediaType: 
+  - application/json
+protocols: [HTTPS]
+uses:
+  common-fragments: /exchange_modules/5854e6ad-4c66-47c0-921e-72092756f614/commonapifragment/1.0.3/commonfragments.raml
+
+securedBy:
+  # - common-fragments.basic-authentication
+  - common-fragments.client-enforcement
+
+traits:
+  example-trait: !include traits/get-integration-status-resource.raml
+
+/ping:
+  type: common-fragments.ping-response
+
+/example:
+  description: example description
+  is: [common-fragments.fault-400, common-fragments.fault-401, common-fragments.fault-404, common-fragments.fault-405, common-fragments.fault-406, common-fragments.fault-415, common-fragments.fault-500, common-fragments.fault-501]
+  get: 
+    is: [example-trait]

@@ -1,0 +1,15 @@
+#%RAML 1.0 Trait
+usage: Used by the GET:/examples to define the request format
+
+uses:
+  dataLibrary: ../libraries/DataLibrary.raml
+
+queryParameters:
+  example:
+    type: dataLibrary.example
+    required: true
+responses:
+  200:
+    body:
+      application/json:
+        example: !include ../examples/example-get-example-response.raml

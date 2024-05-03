@@ -1,0 +1,11 @@
+#%RAML 1.0 Library
+usage: Provides common message structure for requests
+
+types:
+  example:
+    description: example type definition
+    type: string
+    maxLength: 9
+    minLength: 9
+    example: "123456789"
+    pattern: ^\d{9}$
