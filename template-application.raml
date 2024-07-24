@@ -5,7 +5,7 @@ mediaType:
   - application/json
 protocols: [HTTPS]
 uses:
-  common-fragments: /exchange_modules/5854e6ad-4c66-47c0-921e-72092756f614/commonapifragment/1.0.3/commonfragments.raml
+  common-fragments: /exchange_modules/5854e6ad-4c66-47c0-921e-72092756f614/commonapifragment/1.1.0/commonfragments.raml
 
 securedBy:
   # - common-fragments.basic-authentication
@@ -13,6 +13,7 @@ securedBy:
 
 traits:
   example-trait: !include traits/get-integration-status-resource.raml
+  response-codes: [common-fragments.fault-400, common-fragments.fault-401, common-fragments.fault-404, common-fragments.fault-405, common-fragments.fault-406, common-fragments.fault-415, common-fragments.fault-500, common-fragments.fault-501]
 
 /ping:
   type: common-fragments.ping-response
@@ -22,3 +23,27 @@ traits:
   is: [common-fragments.fault-400, common-fragments.fault-401, common-fragments.fault-404, common-fragments.fault-405, common-fragments.fault-406, common-fragments.fault-415, common-fragments.fault-500, common-fragments.fault-501]
   get: 
     is: [example-trait]
+
+/accounts:
+  is: [common-fragments.fault-400, common-fragments.fault-401, common-fragments.fault-404, common-fragments.fault-405, common-fragments.fault-406, common-fragments.fault-415, common-fragments.fault-500, common-fragments.fault-501]
+  type: 
+    common-fragments.entity: 
+      get-entity-example-response: "recordId"
+      post-entity-example-request: {"input":"object"}
+  get:
+  post:
+    responses:
+      201:
+        body:
+          application/json:
+            example: {"hello":"world"}
+
+
+
+
+
+
+
+
+
+
