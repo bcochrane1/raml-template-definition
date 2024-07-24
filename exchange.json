@@ -1,7 +1,7 @@
 {
   "dependencies": [
     {
-      "version": "1.0.3",
+      "version": "1.1.0",
       "assetId": "commonapifragment",
       "groupId": "5854e6ad-4c66-47c0-921e-72092756f614",
       "provided": false
@@ -16,6 +16,5 @@
   "assetId": "template-application",
   "groupId": "5854e6ad-4c66-47c0-921e-72092756f614",
   "organizationId": "5854e6ad-4c66-47c0-921e-72092756f614",
-  "name": "Template Application",
-  "tags": []
+  "name": "Template Application"
 }
