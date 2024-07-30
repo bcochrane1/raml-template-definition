@@ -6,10 +6,7 @@ mediaType:
 protocols: [HTTPS]
 uses:
   common-fragments: /exchange_modules/5854e6ad-4c66-47c0-921e-72092756f614/commonapifragment/1.1.0/commonfragments.raml
-
-traits:
-  integration-status: /exchange_modules/5854e6ad-4c66-47c0-921e-72092756f614/integration-status-object/1.0.2/integration-status-object.raml
-
+  
 securedBy:
   # - common-fragments.basic-authentication
   - common-fragments.client-enforcement
@@ -17,6 +14,7 @@ securedBy:
 traits:
   example-trait: !include traits/get-integration-status-resource.raml
   response-codes: [common-fragments.fault-400, common-fragments.fault-401, common-fragments.fault-404, common-fragments.fault-405, common-fragments.fault-406, common-fragments.fault-415, common-fragments.fault-500, common-fragments.fault-501]
+  integration-status: /exchange_modules/5854e6ad-4c66-47c0-921e-72092756f614/integration-status-object/1.0.2/integration-status-object.raml
 
 /ping:
   type: common-fragments.ping-response
